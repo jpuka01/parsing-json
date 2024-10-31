@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+        .product-item {
+            border: 2px solid #333333;
+            border-radius: 15px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .product-item h2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 1.5rem;
+            color: #333333;
+        }
+        .product-item p {
+            font-family: 'Rubik', sans-serif;
+            font-size: 1rem;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-controls">
+        <select id="category-select">
+            <option value="">Select Category</option>
+        </select>
+        <button id="filter-button">Filter</button>
+    </div>
+
+    <div id="product-display"></div>
+
+    <!-- JQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.get('products.json', function(data) {
+                let displayContent = '';
+                let categories = new Set();
+
+                data.forEach(product => {
+                    displayContent += `<div class="product-item">
+                        <h2>${product.name}</h2>
+                        <p>Description: ${product.description}</p>
+                        <p>Price: $${product.price}</p>
+                        <p>Categories: ${product.categories}</p>
+                    </div>`;
+
+                    // Add categories to the set
+                    product.categories.forEach((category) => categories.add(category));
+                });
+                $("#product-display").html(displayContent);
+                
+                // Populate dropdown with categories
+                categories.forEach((category) => {
+                    $("#category-select").append(new Option(category, category));
+                });
+            });
+
+            // Filter function
+            $("#filter-button").on('click', function() {
+                const selectedCategory = $("#category-select").val();
+                if (selectedCategory) {
+                    $.get("products.json", function(data) {
+                        let filteredContent = '';
+                        data.forEach(product => {
+                            if (product.categories.includes(selectedCategory)) {
+                                filteredContent += `<div class="product-item">
+                                    <h2>${product.name}</h2>
+                                </div>`;
+                            }
+                        });
+                        $("#product-display").html(filteredContent || "<p>No products found in this category.</p>");
+                    });
+                } else {
+                    alert("Please select a category to filter by.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

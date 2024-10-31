@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Cheeseburger🍔",
+        "description": "Local grass-fed beef grilled to perfection with fresh Monterey Jack cheese, lettuce, tomatoes, and sourdough buns.",
+        "price": "$14.99",
+        "categories": ["burgers", "fast food", "beef patty"]
+    },
+    {
+        "name": "Club Sandwich🥪",
+        "description": "Finely sliced turkey and bacon, lettuce, tomatoes, and mayonaise topped on freshly baked sourdough bread.",
+        "price": "$13.99",
+        "categories": ["sandwiches", "bacon", "best sellers"]
+    },
+    {
+        "name": "Fish & Chips🐟",
+        "description": "Fresh cod imported from Scandinavia, deep fried and lightly seasoned with a side of our homemade fries and your choice of dip.",
+        "price": "$13.99",
+        "categories": ["seafood", "fast food", "chips"]
+    },
+    {
+        "name": "Homemade Fries🍟",
+        "description": "Local grown potatoes fried till golden brown and lightly seasoned with salt.",
+        "price": "$8.99",
+        "categories": ["fries", "potato ingredients", "side meals"]
+    },
+    {
+        "name": "Kale Salad🥗",
+        "description": "Made with fresh, hearty kale, Parmesan cheese, toasted almonds, dried cranberries, and a fresh lemon balsamic dressing.",
+        "price": "$10.99",
+        "categories": ["salad", "kale", "healthy"]
+    },
+    {
+        "name": "Freshly Baked Cookies🍪",
+        "description": "New cookies made weekly! This week&apos;s cookie is blueberry muffin, made with vanilla cookie base marbled with blueberry jam, loaded up with blueberries and finally topped with a crunchy streusel topping.",
+        "price": "$9.99",
+        "categories": ["cookies", "specialty", "desserts"]
+    },
+    {
+        "name": "Pumpkin Pie🥧",
+        "description": "Seasonal dessert made with locally grown pumpkins, topped with crushed walnuts and thick whipped cream.",
+        "price": "$11.99",
+        "categories": ["pies", "pumpkin recipes", "desserts", "seasonal"]
+    },
+    {
+        "name": "Ground Coffee☕",
+        "description": "New coffee every week! Carefully sourced around the world. This week&apos; s coffee: Marrakesh blend coffee, a Moroccan Arabica blend with dark medium roast and a delicate aroma.",
+        "price": "$5.99",
+        "categories": ["coffee", "drinks", "specialty"]
+    }
+    
+]
